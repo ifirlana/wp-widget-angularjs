@@ -96,7 +96,7 @@ gulp.task 'run', ['lib', 'templates', 'scripts', 'html', 'css', 'images', 'data'
 
 gulp.src('dist')
 	.pipe(server(
-		port:8797
+		port:8899
 		livereload:true
 	))
 
