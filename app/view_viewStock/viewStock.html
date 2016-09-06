@@ -1,3 +1,23 @@
-<div class="jumbotron">
- 	<p>This is the partial for view 1.</p>
- </div>
+<div ng-app="myApp.viewStock">
+	<div class="jumbotron">
+	 	<p>{{message}}</p>
+	 </div>
+	 <table class="table table-bordered table-hover">
+	 	<thead>
+	 		<tr><th>&nbsp;</th><th>Nama</th><th>Quantity</th><th>Additional</th><th>Action</th></tr>
+	 	</thead>
+	 	<tbody ng-repeat="ds in data_stock">
+	 		<tr>
+	 			<td>{{$index+1+'.'}}</td>
+	 			<td>{{ds.name}}</td>
+	 			<td>{{ds.quantity}}</td>
+	 			<td>
+	 				<span ng-repeat="at in ds.attributes">
+	 				<b ng-if="at.type">{{at.type+","}}</b> 
+	 				<b ng-if="at.status">{{at.status+","}}</b> 
+	 				<b ng-if="at.package">{{at.package}}</b></span></td>
+	 			<td><button class="btn btn-sm btn-info">info</button></td>
+	 			</tr>
+	 	</tbody>
+	 </table>
+</div>
